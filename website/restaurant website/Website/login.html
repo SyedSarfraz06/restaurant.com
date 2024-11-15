@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-page-containers">
+            <div class="container1">
+                <img src="logo.png" style="width: 300px;">
+                <p style="font-size: 20px; font-weight: bold; color: white; margin-bottom: 50px;">Login using social media to get quick access</p>
+                <div class="sign-in">
+                    <button class="google-btn">Sign in with Google</button>
+                    <button class="twitter-btn">Sign in with Twitter</button>
+                    <button class="facebook-btn">Sign in with Facebook</button>
+                </div>
+            </div>
+            <div class="container2">
+                <img src="account-logo.png" style="width: 100px;">
+                <h1>Login to your account</h1>
+                <p style="margin-bottom: 20px;">Don't have an account? <span>Sign Up Free!</span></p>
+                <form onsubmit="return validateLogin()">
+                <input class="text-box" type="text" name="email-id" placeholder="Email address" required>
+                <input class="text-box" id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" placeholder="Password" required />
+                <input type="checkbox" name="email-id" placeholder="Email address" required> Remeber me
+                <a href="#">Forgot password?</a>
+                <button class="email-btn" type="submit">Login</button>
+                <button  class="back-btn"><a href="Polyglot.html" style="color:white;">Back</a></button>
+            </form>
+            <script>
+                function validateLogin() {
+                    var username = document.getElementById("username").value;
+                    var password = document.getElementById("password").value;
+        
+                    // Example validation (replace this with server-side validation)
+                    if (username === "user123" && password === "pass123") {
+                        alert("Login successful!");
+                        return true; // Allow the form to be submitted
+                    } else {
+                        alert("Login failed. Please check your username and password.");
+                        return false; // Prevent the form from being submitted
+                    }
+                }
+        
+                function togglePassword() {
+                    var passwordInput = document.getElementById("password");
+                    if (passwordInput.type === "password") {
+                        passwordInput.type = "text";
+                    } else {
+                        passwordInput.type = "password";
+                    }
+                }
+            </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
